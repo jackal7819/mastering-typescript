@@ -1,12 +1,32 @@
+import { useState } from 'react';
 
+import Form from './components/Form';
+import List from './components/List';
+import { Task } from '../types';
 
-function App() {
+export default function App() {
+	const [tasks, setTasks] = useState<Task[]>([]);
 
-  return (
-    <main>
+	const addTask = (task: Task) => {
+		setTasks([...tasks, task]);
+	};
 
-    </main>
-  )
+	const toggleTask = ({ id }: { id: string }) => {
+		setTasks(
+			tasks.map((task) =>
+				task.id === id
+					? { ...task, isCompleted: !task.isCompleted }
+					: task
+			)
+		);
+	};
+
+	return (
+		<main>
+			<section>
+				<Form addTask={addTask} />
+				<List tasks={tasks} toggleTask={toggleTask} />
+			</section>
+		</main>
+	);
 }
-
-export default App
