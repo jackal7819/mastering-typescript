@@ -1,30 +1,65 @@
-# React + TypeScript + Vite
+# Mastering TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a project setup using React, TypeScript, and Vite. It demonstrates a basic structure for a TypeScript project with React, including form handling and state management.
 
-Currently, two official plugins are available:
+## Project Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+Ensure you have Node.js and npm installed.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Installation
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/jackal7819/mastering-typescript.git
+   cd mastering-typescript
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+### Running the Project
+
+Start the development server:
+```sh
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The application will be available at `http://localhost:3000`.
+
+## Project Structure
+
+- **public/**: Static files
+- **src/**: Source code
+  - **components/**: React components
+  - **types.ts**: TypeScript type definitions
+- **index.html**: Main HTML file
+- **package.json**: Project dependencies and scripts
+- **tsconfig.json**: TypeScript configuration
+
+## Scripts
+
+- `npm run dev`: Start the development server.
+- `npm run build`: Build the project for production.
+- `npm run lint`: Run ESLint to check for linting errors.
+
+## Usage
+
+### Adding a Task
+
+To add a task, use the form on the main page. The task will be displayed in the list below.
+
+### Customizing
+
+Modify the components in `src/components` and the types in `src/types.ts` to extend the functionality.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
