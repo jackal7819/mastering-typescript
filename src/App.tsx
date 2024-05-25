@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Form from './components/Form';
 import List from './components/List';
 import { Task } from '../types';
+import { loadTasks, saveTasks } from './services/storage';
 
 export default function App() {
-	const [tasks, setTasks] = useState<Task[]>([]);
+	const [tasks, setTasks] = useState<Task[]>(() => loadTasks());
 
 	const addTask = (task: Task) => {
 		setTasks([...tasks, task]);
@@ -20,6 +21,10 @@ export default function App() {
 			)
 		);
 	};
+
+	useEffect(() => {
+		saveTasks(tasks);
+	}, [tasks]);
 
 	return (
 		<main>
